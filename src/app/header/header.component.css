@@ -1,0 +1,46 @@
+.header {
+  height: 18.6rem;
+  width: 100vw;
+  border-radius: 0 0 8px 8px;
+  background: linear-gradient(#4B29D4 0%, #2C9BD9 100%);
+}
+
+.greeting {
+  font-size: 3rem;
+  text-align: center;
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  font-weight: 600;
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  width: 28rem;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #fff;
+  left: 50%;
+  margin: 8.2rem -14rem 6.2rem -14rem;
+  position: absolute;
+  cursor: pointer;
+}
+
+#homeBtn,
+#todoBtn {
+  position: relative;
+}
+
+.active::after {
+  content: '';
+  width: 9.5rem;
+  height: 0.3rem;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
