@@ -17,3 +17,9 @@ html,
 body {
   height: 100vh;
 }
+
+.skycons__canvas {
+  height: 6.4rem;
+  left: 1rem;
+  position: absolute;
+}

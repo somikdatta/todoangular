@@ -1,0 +1,16 @@
+<div class="timecontainer">
+    <span class="time">{{ time | date:'hh:mm a' }}</span>
+    <span class="day">{{ time | date:'EEEE, dd LLLL' }}</span>
+</div>
+
+<sc-skycons weather="{{weatherIcon}}" color="{{color}}"></sc-skycons>
+
+<span class="timezone">{{timezone}}</span>
+<span class="summary">{{summary}}</span>
+<span class="temparature__box"><span class="temparature">{{temperature}}</span><span class="degree">°C</span></span>
+
+
+<div class="quotebox">
+    <span class="quotebox__quote">{{quote.contents.quotes[0].quote}}</span>
+    <span class="quotebox__author">{{quote.contents.quotes[0].author}}</span>
+</div>

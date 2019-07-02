@@ -23,11 +23,15 @@
   width: 28rem;
   font-size: 3rem;
   font-weight: 600;
-  color: #fff;
   left: 50%;
   margin: 8.2rem -14rem 6.2rem -14rem;
   position: absolute;
   cursor: pointer;
+}
+
+.navbar>li>a {
+  text-decoration: none;
+  color: #fff;
 }
 
 #homeBtn,

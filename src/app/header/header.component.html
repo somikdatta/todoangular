@@ -1,10 +1,11 @@
 <div class="header">
     <div class="greeting">
-        <span class="greeting__time">Good Morning, </span>
-        <span class="greeting__name" contenteditable="true">User</span>
+        <span class="greeting__time">{{greeting}}</span>
+        <span (blur)='updateName($event)' (keydown)='updateName($event)' class="greeting__name"
+            contenteditable="true">{{name}}</span>
     </div>
     <ul class="navbar">
-        <li id='homeBtn'>Home</li>
-        <li id='todoBtn'>To Do</li>
+        <li id='homeBtn'><a routerLink='/home' routerLinkActive="active">Home</a></li>
+        <li id='todoBtn'><a routerLink='/todo' routerLinkActive="active">To Do</a></li>
     </ul>
 </div>
