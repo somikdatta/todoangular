@@ -72,20 +72,6 @@ export class HomeComponent implements OnInit {
         }
       );
     };
-    // switch (this.weatherIcon) {
-    //   case "clear-day": { this.color = 'red'; break; }
-    //   case "clear-night": { this.color = 'red'; break; }
-    //   case "partly-cloudy-day": { this.color = 'red'; break; }
-    //   case "partly-cloudy-night": { this.color = 'red'; break; }
-    //   case "cloudy": { this.color = 'red'; break; }
-    //   case "rain": { this.color = 'red'; break; }
-    //   case "sleet": { this.color = '#2C5228'; break; }
-    //   case "snow": { this.color = 'red'; break; }
-    //   case "wind": { this.color = 'red'; break; }
-    //   case "fog": { this.color = '#CCC'; break; }
-    //   default: this.color = '#6999B5';
-    // }
-
   }
 
   timeNow(): void {
