@@ -86,3 +86,10 @@
   text-align: right;
   color: #6999B5;
 }
+
+.icon {
+  width: 6.4rem;
+  position: absolute;
+  left: 4.3rem;
+  top: 4rem;
+}

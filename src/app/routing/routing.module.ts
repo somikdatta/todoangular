@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes, Router } from '@angular/router';
 
-import { SkyconsModule } from 'ngx-skycons';
 
 import { HomeComponent } from '../home/home.component';
 import { TodoComponent } from '../todo/todo.component';
@@ -25,7 +24,6 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(appRoutes),
     CommonModule,
-    SkyconsModule
   ],
   exports: [RouterModule]
 })

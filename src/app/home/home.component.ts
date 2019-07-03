@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ControllerService } from '../shared/controller.service';
-import { SkyconsTypes } from 'ngx-skycons';
 
 import { Qod } from '../shared/model';
 import { Weather } from '../shared/model';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +14,7 @@ export class HomeComponent implements OnInit {
   private quoteStr: string;
   private quoteAuthor: string;
   private time: number;
-  private color: string;
+  private color: string = '#b1bfc9';
   private latitude: any;
   private longitude: any;
   private weatherReport: Weather;
@@ -33,7 +31,7 @@ export class HomeComponent implements OnInit {
         this.quote = qod,
           this.quoteStr = this.quote.contents.quotes[0].quote,
           this.quoteAuthor = this.quote.contents.quotes[0].author,
-          err => alert('Error')
+          err => console.log(err)
       });
     this.timeNow();
 
@@ -50,8 +48,7 @@ export class HomeComponent implements OnInit {
                   this.temperature = Math.floor((this.temperature - 32) / 1.8),
                   this.timezone = this.weatherReport.timezone,
                   this.summary = this.weatherReport.currently.summary,
-                  this.weatherIcon = this.weatherReport.currently.icon,
-                  this.weatherIcon == 'clear-day' ? this.color = '#FFDC00' : this.color = '#b1bfc9'
+                  this.weatherIcon = this.weatherReport.currently.icon
               },
               err => console.log(err)
             );
