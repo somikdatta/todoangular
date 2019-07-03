@@ -3,14 +3,18 @@
     <span class="day">{{ time | date:'EEEE, dd LLLL' }}</span>
 </div>
 
-<sc-skycons weather="{{weatherIcon}}" color="{{color}}"></sc-skycons>
+<div *ngIf="locationAvailability">
+    <sc-skycons weather="{{weatherIcon}}" color="{{color}}"></sc-skycons>
+    <span class="timezone">{{timezone}}</span>
+    <span class="summary">{{summary}}</span>
+    <span class="temparature__box"><span class="temparature">{{temperature}}</span><span class="degree">°C</span></span>
+</div>
 
-<span class="timezone">{{timezone}}</span>
-<span class="summary">{{summary}}</span>
-<span class="temparature__box"><span class="temparature">{{temperature}}</span><span class="degree">°C</span></span>
-
+<div *ngIf="!locationAvailability" class="notweather">
+    Please allow location for weather updates.
+</div>
 
 <div class="quotebox">
-    <span class="quotebox__quote">{{quote.contents.quotes[0].quote}}</span>
-    <span class="quotebox__author">{{quote.contents.quotes[0].author}}</span>
+    <span class="quotebox__quote">{{quoteStr}}</span>
+    <span class="quotebox__author">{{quoteAuthor}}</span>
 </div>

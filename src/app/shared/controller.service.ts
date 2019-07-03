@@ -10,7 +10,7 @@ import { Weather } from './model';
 })
 export class ControllerService {
   private quoteAPIURL = 'http://quotes.rest/qod.json';
-  private weatherAPIURL = 'https://bypasscors.herokuapp.com/api/?url=https://api.darksky.net/forecast/44d5f2c1fe93d1fe500407f32b6fe528/';
+  private weatherAPIURL = 'http://corsproxysomik.herokuapp.com/https://api.darksky.net/forecast/44d5f2c1fe93d1fe500407f32b6fe528/';
 
   constructor(private http: HttpClient) { }
   getUserName(): String {
@@ -47,7 +47,7 @@ export class ControllerService {
   }
 
   getWeather(location: string): Observable<Weather> {
-    return this.http.get<Weather>(`${this.weatherAPIURL}${location}`);
+    return this.http.get<Weather>(`${this.weatherAPIURL}${location}?exclude=minutely,hourly,daily`);
   }
 
 }

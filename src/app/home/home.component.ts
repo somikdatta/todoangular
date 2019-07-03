@@ -4,6 +4,7 @@ import { SkyconsTypes } from 'ngx-skycons';
 
 import { Qod } from '../shared/model';
 import { Weather } from '../shared/model';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,8 @@ import { Weather } from '../shared/model';
 })
 export class HomeComponent implements OnInit {
   private quote: Qod;
+  private quoteStr: string;
+  private quoteAuthor: string;
   private time: number;
   private color: string;
   private latitude: any;
@@ -21,14 +24,17 @@ export class HomeComponent implements OnInit {
   private timezone: string;
   private summary: string;
   private weatherIcon: string;
-  constructor(private service: ControllerService) {
-  }
+  private locationAvailability: boolean;
+  constructor(private service: ControllerService) { }
 
   ngOnInit() {
     this.service.getQuote().subscribe(
-      qod => this.quote = qod,
-      err => alert('Error')
-    );
+      qod => {
+        this.quote = qod,
+          this.quoteStr = this.quote.contents.quotes[0].quote,
+          this.quoteAuthor = this.quote.contents.quotes[0].author,
+          err => alert('Error')
+      });
     this.timeNow();
 
     if (window.navigator && window.navigator.geolocation) {
@@ -36,6 +42,7 @@ export class HomeComponent implements OnInit {
         position => {
           this.latitude = position.coords.latitude,
             this.longitude = position.coords.longitude,
+            this.locationAvailability = true,
             this.service.getWeather(`${this.latitude},${this.longitude}`).subscribe(
               weatherReport => {
                 this.weatherReport = weatherReport,
@@ -43,12 +50,14 @@ export class HomeComponent implements OnInit {
                   this.temperature = Math.floor((this.temperature - 32) / 1.8),
                   this.timezone = this.weatherReport.timezone,
                   this.summary = this.weatherReport.currently.summary,
-                  this.weatherIcon = this.weatherReport.currently.icon
+                  this.weatherIcon = this.weatherReport.currently.icon,
+                  this.weatherIcon == 'clear-day' ? this.color = '#FFDC00' : this.color = '#b1bfc9'
               },
               err => console.log(err)
             );
         },
         error => {
+          this.locationAvailability = false;
           switch (error.code) {
             case 1:
               console.log('Permission Denied');
@@ -63,7 +72,19 @@ export class HomeComponent implements OnInit {
         }
       );
     };
-
+    // switch (this.weatherIcon) {
+    //   case "clear-day": { this.color = 'red'; break; }
+    //   case "clear-night": { this.color = 'red'; break; }
+    //   case "partly-cloudy-day": { this.color = 'red'; break; }
+    //   case "partly-cloudy-night": { this.color = 'red'; break; }
+    //   case "cloudy": { this.color = 'red'; break; }
+    //   case "rain": { this.color = 'red'; break; }
+    //   case "sleet": { this.color = '#2C5228'; break; }
+    //   case "snow": { this.color = 'red'; break; }
+    //   case "wind": { this.color = 'red'; break; }
+    //   case "fog": { this.color = '#CCC'; break; }
+    //   default: this.color = '#6999B5';
+    // }
 
   }
 
