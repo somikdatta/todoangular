@@ -24,3 +24,7 @@ export interface Weather {
     [x: string]: any;
 
 }
+export interface Address {
+    [x: string]: any;
+
+}

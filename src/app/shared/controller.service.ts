@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { Qod } from './model';
 import { Weather } from './model';
+import { Address } from './model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ import { Weather } from './model';
 export class ControllerService {
   private quoteAPIURL = 'http://quotes.rest/qod.json';
   private weatherAPIURL = 'http://corsproxysomik.herokuapp.com/https://api.darksky.net/forecast/44d5f2c1fe93d1fe500407f32b6fe528/';
+  private locationAPIURL = 'https://nominatim.openstreetmap.org/reverse?format=jsonv2&';
 
   constructor(private http: HttpClient) { }
   getUserName(): String {
@@ -48,6 +50,10 @@ export class ControllerService {
 
   getWeather(location: string): Observable<Weather> {
     return this.http.get<Weather>(`${this.weatherAPIURL}${location}?exclude=minutely,hourly,daily`);
+  }
+
+  getLocation(lat: number, lng: number): Observable<Address> {
+    return this.http.get<Address>(`${this.locationAPIURL}lat=${lat}&lon=${lng}`);
   }
 
 }
