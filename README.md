@@ -4,9 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 This project provides user a dyamic landing page (Home) tab and a TO DO list tab (under development)
 
-![Asks for Location Permission](https://i.imgur.com/U7eFqHB.png)
+![Asks for Location Permission](https://i.imgur.com/U7eFqHB.png?2)
 
-![If Given, shows weather and location data](https://i.imgur.com/ZV4yZPL.png)
+![If Given, shows weather and location data](https://i.imgur.com/ZV4yZPL.png?2)
 
 
 ## Development server
