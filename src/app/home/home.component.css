@@ -55,7 +55,7 @@
   font-size: 2.4rem;
   position: absolute;
   top: 7.2rem;
-  right: 4.3rem;
+  left: 23.5rem;
   max-width: 15rem;
   text-align: left;
 }
@@ -94,4 +94,15 @@
   position: absolute;
   left: 4.3rem;
   top: 4rem;
+}
+
+.notweather {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  border: 1px solid #dc3545;
+  border-radius: 8px;
+  padding: 5px;
+  background: #ff98a3;
+  color: #bc0719;
 }
