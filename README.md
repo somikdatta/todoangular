@@ -6,7 +6,7 @@ This project provides user a dyamic landing page (Home) tab and a TO DO list tab
 
 ![Asks for Location Permission](https://i.imgur.com/U7eFqHB.png?2)
 
-![If Given, shows weather and location data](https://i.imgur.com/ZV4yZPL.png?2)
+![If Given, shows weather and location data](https://i.imgur.com/X7au7rZ.png?1)
 
 
 ## Development server
