@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes, Router } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AutofocusModule } from 'angular-autofocus-fix';
 
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     CommonModule,
     FormsModule,
-    AutofocusModule
+    AutofocusModule,
+    BrowserAnimationsModule
   ],
   exports: [RouterModule]
 })

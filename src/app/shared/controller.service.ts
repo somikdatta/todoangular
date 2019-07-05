@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Qod } from './model';
 import { Weather } from './model';
 import { Address } from './model';
+import { TodoItem } from '../shared/model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,23 @@ export class ControllerService {
   private quoteAPIURL = 'http://quotes.rest/qod.json';
   private weatherAPIURL = 'http://corsproxysomik.herokuapp.com/https://api.darksky.net/forecast/44d5f2c1fe93d1fe500407f32b6fe528/';
   private locationAPIURL = 'https://nominatim.openstreetmap.org/reverse?format=jsonv2&';
+  private todos: TodoItem[];
+  private todoTitle: string;
+  private todoId: number;
+  private beforeEditCache: string;
+  private filter: string;
+  public isEmpty: boolean;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.filter = 'all';
+    this.todoTitle = '';
+    this.beforeEditCache = '';
+    this.todos = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [];
+    if (this.todos.length === 0) {
+      this.isEmpty = true;
+    }
+    this.todoId = this.todos.length > 0 ? (this.todos[(this.todos.length) - 1].id) + 1 : 1;
+  }
   getUserName(): String {
     return localStorage.getItem('name') ? localStorage.getItem('name') : 'User';
   }
@@ -49,6 +65,64 @@ export class ControllerService {
     return this.http.get<Address>(`${this.locationAPIURL}lat=${lat}&lon=${lng}`);
   }
 
+  addTodo(todoTitle: string): void {
 
+    this.todos.push({
+      id: this.todoId,
+      title: todoTitle,
+      completed: false,
+      editing: false
+    });
+    this.todoId++;
+    this.todosUpdated();
+  }
+  deleteTodo(id: number): void {
+    // this.todos.splice(id - 1, 1); found it was being computationally expensive
+    this.todos = this.todos.filter(todo => todo.id !== id);
+    this.todosUpdated();
+  }
+  editTodo(todo: TodoItem): void {
+    this.beforeEditCache = todo.title;
+    todo.editing = true;
+    this.todosUpdated();
+  }
+  doneEdit(todo: TodoItem): void {
+    if (todo.title.trim().length === 0) {
+      todo.title = this.beforeEditCache;
+    }
+    todo.editing = false;
+    this.todosUpdated();
+  }
+  cancelEdit(todo: TodoItem): void {
+    todo.title = this.beforeEditCache;
+    todo.editing = false;
+  }
+  toggleCompleteItem(todo: TodoItem): void {
+    todo.completed = !todo.completed;
+    this.todosUpdated();
+  }
+  atLeastOneCompleted(): boolean {
+    return this.todos.filter(todo => todo.completed).length > 0;
+  }
+  removeCompleted(): void {
+    this.todos = this.todos.filter(todo => !todo.completed);
+    this.todosUpdated();
+  }
+  filterTodos(): TodoItem[] {
+    if (this.filter === 'all') {
+      return this.todos;
+    }
+    else if (this.filter === 'active') {
+      return this.todos.filter(todo => !todo.completed);
+    }
+    else if (this.filter === 'completed') {
+      return this.todos.filter(todo => todo.completed);
+    }
+    return this.todos;
+  }
+  todosUpdated(): void {
+    localStorage.setItem('todos', JSON.stringify(this.todos));
+    this.isEmpty = false;
+  }
 
 }
