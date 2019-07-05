@@ -1,7 +1,4 @@
 .quotebox {
-  position: absolute;
-  bottom: 3.1rem;
-  width: 34.2rem;
   color: #728C9B;
 }
 
@@ -17,15 +14,10 @@
   font-size: 1.5rem;
   font-weight: 500;
   text-align: right;
-  line-height: 2.9rem;
 }
 
 .timecontainer {
   text-align: center;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
 }
 
 .time,
@@ -50,25 +42,16 @@
   width: 100%;
 }
 
-.timezone {
-  color: #6999B5;
-  font-size: 2.4rem;
-  position: absolute;
-  top: 7.2rem;
-  left: 23.5rem;
-  max-width: 15rem;
-  text-align: left;
-}
 
 .temparature__box {
-  position: absolute;
-  top: 4.5rem;
-  left: 12rem;
   color: #67889B;
   font-weight: 500;
+  display: inline;
 }
 
 .temparature {
+  position: absolute;
+  top: 5%;
   font-size: 4.6rem;
   line-height: 5.6rem;
 }
@@ -76,14 +59,15 @@
 .degree {
   font-size: 3.4rem;
   position: absolute;
-  top: 0.2rem;
+  top: 6%;
+  right: 7%;
+}
+
+.iconTempWrap {
+  position: relative;
 }
 
 .summary {
-  width: 17.2rem;
-  position: absolute;
-  left: 4.3rem;
-  top: 10rem;
   font-size: 2rem;
   text-align: right;
   color: #6999B5;
@@ -91,9 +75,11 @@
 
 .icon {
   width: 6.4rem;
-  position: absolute;
-  left: 4.3rem;
-  top: 4rem;
+}
+
+.weather,
+.iconTempSummaryWrap {
+  display: flex;
 }
 
 .notweather {
@@ -105,4 +91,25 @@
   padding: 5px;
   background: #ff98a3;
   color: #bc0719;
+}
+
+.iconTempSummaryWrap {
+  flex-direction: column;
+  flex: 1;
+}
+
+.timezone {
+  color: #6999B5;
+  font-size: 2.4rem;
+  flex: 1;
+  text-align: left;
+  text-indent: 15%;
+  line-height: 100%;
+  position: relative;
+}
+
+.timezone>p {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
 }

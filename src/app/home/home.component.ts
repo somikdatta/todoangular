@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   private color: string = '#b1bfc9';
   private latitude: any;
   private longitude: any;
+  private weatherReportReady: boolean;
   private weatherReport: Weather;
   private address: Address;
   private temperature: number;
@@ -52,7 +53,8 @@ export class HomeComponent implements OnInit {
                   this.temperature = this.weatherReport.currently.temperature,
                   this.temperature = Math.floor((this.temperature - 32) / 1.8),
                   this.summary = this.weatherReport.currently.summary,
-                  this.weatherIcon = `${this.weatherReport.currently.icon}.png`
+                  this.weatherIcon = `${this.weatherReport.currently.icon}.png`,
+                  this.weatherReportReady = true;
               },
               err => console.log(err)
             );

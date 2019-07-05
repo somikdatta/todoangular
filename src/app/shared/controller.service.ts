@@ -20,15 +20,8 @@ export class ControllerService {
   }
 
   updateName(event: any) {
-    if (event.type === 'keydown') {
-      if (event.which == 13) {
-        localStorage.setItem('name', event.target.innerText);
-        event.target.blur();
-      }
-    }
-    else {
-      localStorage.setItem('name', event.target.innerText);
-    }
+    localStorage.setItem('name', event.target.innerText);
+    event.target.blur();
   }
 
   getGreeting(): String {

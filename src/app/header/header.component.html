@@ -1,7 +1,7 @@
-<div class="header">
+<div class="header" id="renderer">
     <div class="greeting">
         <span class="greeting__time">{{greeting}}</span>
-        <span (blur)='updateName($event)' (keydown)='updateName($event)' class="greeting__name"
+        <span (blur)='updateName($event)' (keydown.enter)='updateName($event)' class="greeting__name"
             contenteditable="true">{{name}}</span>
     </div>
     <ul class="navbar">

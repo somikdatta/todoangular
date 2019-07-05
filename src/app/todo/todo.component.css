@@ -1,0 +1,218 @@
+.todo_input {
+  height: 4.2rem;
+  width: 100%;
+  border-radius: 2rem 5rem 5rem 2rem;
+  border: 3px solid #3771D7;
+  box-shadow: 0 0 10px 0 rgba(170, 168, 168, 0.2);
+  outline: none;
+  text-indent: 2rem;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  padding-right: 4.2rem;
+}
+
+.todo_input::placeholder {
+  text-indent: 2rem;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: #728C9B;
+}
+
+.todo_input::-moz-placeholder {
+  text-indent: 2rem;
+  font-family: Montserrat,
+    sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 3.7rem;
+  color: #728C9B;
+}
+
+.todo_input::-webkit-input-placeholder {
+  text-indent: 2rem;
+  font-family: Montserrat,
+    sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: #728C9B;
+}
+
+.addBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 4.2rem;
+  width: 4.2rem;
+  border-radius: 2.1rem;
+  box-shadow: none;
+  border: none;
+  background: #3771D7;
+  cursor: pointer;
+}
+
+
+.addBtn>svg {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.incomplete {
+  opacity: 1;
+}
+
+.complete {
+  opacity: 0.7;
+}
+
+.todo_item {
+  width: 100%;
+  margin-top: 2rem;
+  min-height: 4.2rem;
+  box-shadow: 0 0 20px 0 rgba(170, 168, 168, 0.2);
+  border-radius: 0.8rem;
+  padding: 0 8.5rem 0 2rem;
+  position: relative;
+}
+
+.todo_buttons {
+  position: absolute;
+  right: 1.5rem;
+  top: 0;
+  margin: auto 0;
+}
+
+.todo_item_label {
+  color: #728C9B;
+  font-weight: 500;
+  font-size: 1.7rem;
+  height: 100%;
+  line-height: 4.2rem;
+  max-width: 100%;
+  box-align: center;
+}
+
+.todo_item_done,
+.todo_item_remove {
+  width: 3rem;
+  height: 4.2rem;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  position: relative;
+}
+
+.todo_item_done>svg,
+.todo_item_remove>svg {
+  width: 2.2rem;
+  height: 2.2rem;
+  cursor: pointer;
+}
+
+.todo_item_done>svg {
+  border-radius: 2.1rem;
+  border: 0.2rem solid #3771D7;
+  transition: 0.2s border ease;
+}
+
+.todo_item_done::before {
+  content: '';
+  height: 2.2rem;
+  width: 0.1rem;
+  background: #c0cecb;
+  position: absolute;
+  right: 3rem;
+}
+
+.todo_item_remove {
+  fill: #c0cecb;
+  transition: 0.2s fill ease;
+}
+
+.todo_item_remove:hover {
+  fill: #e85656;
+  transition: 0.2s fill ease;
+}
+
+.todo_item_done {
+  fill: #3771D7;
+  transition: 0.2s fill ease;
+}
+
+.todo_item_done>svg:hover {
+  fill: #fff;
+  border: 0.2rem solid #3771D7;
+  transition: 0.2s all ease;
+  background-color: #3771D7;
+}
+
+.complete .todo_item_done>svg {
+  fill: #fff;
+  background-color: #3771D7;
+  transition: 0.2s all ease;
+}
+
+.complete .todo_item_done>svg:hover {
+  background-color: #fff;
+  fill: #3771D7;
+  transition: 0.2s all ease;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.active {
+  color: #dc3545 !important;
+}
+
+.left_extra_container {
+  width: 60%;
+  height: 4.2rem;
+  display: flex;
+  box-shadow: 0 0 10px 0 rgba(170, 168, 168, 0.2);
+  border-radius: 0.8rem;
+}
+
+.left_extra_container button {
+  background: none;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  margin: 0;
+  height: inherit;
+  color: #728C9B;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.left_extra_container button:nth-of-type(2) {
+  border-left: 1px solid rgba(170, 168, 168, 0.2);
+  border-right: 1px solid rgba(170, 168, 168, 0.2);
+}
+
+.right_extra_container {
+  width: 23%;
+  height: 4.2rem;
+  box-shadow: 0 0 10px 0 rgba(170, 168, 168, 0.2);
+  border-radius: 0.8rem;
+}
+
+.right_extra_container {
+  color: #728C9B;
+  position: relative;
+}
+
+.right_extra_container>p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.4rem;
+}

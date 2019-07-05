@@ -1,17 +1,23 @@
-<div class="timecontainer">
-    <span class="time">{{ time | date:'hh:mm a' }}</span>
-    <span class="day">{{ time | date:'EEEE, dd LLLL' }}</span>
-</div>
-
-<div *ngIf="locationAvailability">
-    <img class='icon' src="../../assets/icons/{{weatherIcon}}" alt="{{weatherIcon}}">
-    <span class="timezone">{{timezone}}</span>
-    <span class="summary">{{summary}}</span>
-    <span class="temparature__box"><span class="temparature">{{temperature}}</span><span class="degree">°C</span></span>
+<div *ngIf="locationAvailability" class="weather">
+    <span *ngIf="weatherReportReady" class="iconTempSummaryWrap">
+        <div class="iconTempWrap">
+            <img class='icon' src="../../assets/icons/{{weatherIcon}}" alt="{{weatherIcon}}">
+            <div class="temparature__box"><span class="temparature">{{temperature}}</span><span class="degree">°C</span>
+            </div>
+        </div>
+        <span class="summary">{{summary}}</span>
+    </span>
+    <span class="timezone">
+        <p>{{timezone}}</p>
+    </span>
 </div>
 
 <div *ngIf="!locationAvailability" class="notweather">
     Please allow location for weather updates.
+</div>
+<div class="timecontainer">
+    <span class="time">{{ time | date:'hh:mm a' }}</span>
+    <span class="day">{{ time | date:'EEEE, dd LLLL' }}</span>
 </div>
 
 <div class="quotebox">
