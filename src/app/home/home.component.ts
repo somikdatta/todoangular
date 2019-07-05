@@ -12,21 +12,21 @@ import { Address } from '../shared/model';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  private quote: Qod;
-  private quoteStr: string;
-  private quoteAuthor: string;
-  private time: number;
-  private color: string = '#b1bfc9';
-  private latitude: any;
-  private longitude: any;
-  private weatherReportReady: boolean;
-  private weatherReport: Weather;
-  private address: Address;
-  private temperature: number;
-  private timezone: string;
-  private summary: string;
-  private weatherIcon: string;
-  private locationAvailability: boolean;
+  quote: Qod;
+  quoteStr: string;
+  quoteAuthor: string;
+  time: number;
+  color: string = '#b1bfc9';
+  latitude: any;
+  longitude: any;
+  weatherReportReady: boolean;
+  weatherReport: Weather;
+  address: Address;
+  temperature: number;
+  timezone: string;
+  summary: string;
+  weatherIcon: string;
+  locationAvailability: boolean;
 
   constructor(private service: ControllerService, private ngZone: NgZone) { }
 

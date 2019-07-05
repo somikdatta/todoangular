@@ -81,7 +81,7 @@
         <button style='flex:2.5;' [ngClass]="{'active': controller.filter==='completed'}"
             (click)="controller.filter='completed'">Completed</button>
     </div>
-    <div *ngIf="controller.atLeastOneCompleted()" class="right_extra_container" (click)='removeCompleted()'>
+    <div *ngIf="controller.atLeastOneCompleted()" class="right_extra_container" (click)='removeCompleted()' @pop>
         <button>Clear completed</button>
     </div>
 </div>

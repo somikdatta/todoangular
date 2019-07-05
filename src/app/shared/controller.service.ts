@@ -11,14 +11,14 @@ import { TodoItem } from '../shared/model';
   providedIn: 'root'
 })
 export class ControllerService {
-  private quoteAPIURL = 'http://quotes.rest/qod.json';
-  private weatherAPIURL = 'http://corsproxysomik.herokuapp.com/https://api.darksky.net/forecast/44d5f2c1fe93d1fe500407f32b6fe528/';
-  private locationAPIURL = 'https://nominatim.openstreetmap.org/reverse?format=jsonv2&';
-  private todos: TodoItem[];
-  private todoTitle: string;
-  private todoId: number;
-  private beforeEditCache: string;
-  private filter: string;
+  quoteAPIURL = 'http://quotes.rest/qod.json';
+  weatherAPIURL = 'http://corsproxysomik.herokuapp.com/https://api.darksky.net/forecast/44d5f2c1fe93d1fe500407f32b6fe528/';
+  locationAPIURL = 'https://nominatim.openstreetmap.org/reverse?format=jsonv2&';
+  todos: TodoItem[];
+  todoTitle: string;
+  todoId: number;
+  beforeEditCache: string;
+  filter: string;
   public isEmpty: boolean;
 
   constructor(private http: HttpClient) {

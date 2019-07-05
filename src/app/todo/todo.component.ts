@@ -18,12 +18,25 @@ import { trigger, transition, style, animate } from '@angular/animations';
         style({ opacity: 1, transform: 'translateX(0)' }),
         animate(200, style({ opacity: 0, transform: 'translateX(2rem)' }))
       ])
+    ]),
+    trigger('pop', [
+      transition(":enter", [
+        style({ opacity: 0, transform: 'scale(0.8)' }),
+        animate(200, style({ opacity: 1, transform: 'scale(1)' }))
+      ]),
+      transition(":leave", [
+        style({ opacity: 1, transform: 'scale(1)' }),
+        animate(200, style({ opacity: 0, transform: 'scale(0.8)' }))
+      ])
     ])
   ]
 })
 export class TodoComponent implements OnInit {
-  private todoTitle: string;
-  constructor(private controller: ControllerService) { }
+  todoTitle: string;
+  controller: ControllerService;
+  constructor(private service: ControllerService) {
+    this.controller = service;
+  }
 
   ngOnInit() {
     this.todoTitle = '';
