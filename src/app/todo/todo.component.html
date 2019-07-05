@@ -1,7 +1,8 @@
 <div class="top">
     <div class="inputWrap" style="position: relative;">
-        <input type="text" class="todo_input" placeholder="I have to..">
-        <button class="addBtn">
+        <input type="text" class="todo_input" placeholder="I have to.." [(ngModel)]="todoTitle"
+            (keydown.enter)='addTodo()'>
+        <button (click)='addTodo()' class="addBtn">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
                 id="Layer_1" x="0px" y="0px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;"
                 xml:space="preserve">
@@ -20,10 +21,14 @@
         </button>
     </div>
 
-    <div class="todo_item incomplete" *ngFor="let todo of todos">
-        <div class="todo_item_label">{{ todo.title }}</div>
+    <div class="todo_item" [ngClass]="{'complete':todo.completed}" *ngFor="let todo of filterTodos()?.reverse()">
+        <div *ngIf='!todo.editing' class="todo_item_label" (dblclick)='editTodo(todo)'>{{ todo.title }}</div>
+
+        <input *ngIf='todo.editing' type="text" class="todo_item_edit" [(ngModel)]='todo.title'
+            (keydown.esc)='cancelEdit(todo)' (blur)='doneEdit(todo)' (keydown.enter)='doneEdit(todo)' autofocus>
+
         <div class="todo_buttons">
-            <button class="todo_item_remove">
+            <button class="todo_item_remove" (click)='deleteTodo(todo.id)'>
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                     y="0px" viewBox="0 0 22 22" style="enable-background:new 0 0 22 22;" xml:space="preserve">
                     <g>
@@ -52,7 +57,7 @@
                     </g>
                 </svg>
             </button>
-            <button class="todo_item_done">
+            <button class="todo_item_done" (click)='toggleCompleteItem(todo)'>
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                     y="0px" viewBox="0 0 22 22" style="enable-background:new 0 0 22 22;" xml:space="preserve">
                     <g>
@@ -68,11 +73,12 @@
 
 <div class="bottom">
     <div class="left_extra_container">
-        <button style='flex:1;' class="active">All</button>
-        <button style='flex:1.5;'>To Do</button>
-        <button style='flex:2.5;'>Completed</button>
+        <button style='flex:1;' [ngClass]="{'active': filter==='all'}" (click)="filter='all'">All</button>
+        <button style='flex:1.5;' [ngClass]="{'active': filter==='active'}" (click)="filter='active'">To Do</button>
+        <button style='flex:2.5;' [ngClass]="{'active': filter==='completed'}"
+            (click)="filter='completed'">Completed</button>
     </div>
-    <div class="right_extra_container">
-        <p>2 left</p>
+    <div *ngIf="atLeastOneCompleted()" class="right_extra_container" (click)='removeCompleted()'>
+        <button>Clear completed</button>
     </div>
 </div>

@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
+import { AutofocusModule } from 'angular-autofocus-fix';
 
 import { HomeComponent } from '../home/home.component';
 import { TodoComponent } from '../todo/todo.component';
@@ -24,6 +26,8 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(appRoutes),
     CommonModule,
+    FormsModule,
+    AutofocusModule
   ],
   exports: [RouterModule]
 })
