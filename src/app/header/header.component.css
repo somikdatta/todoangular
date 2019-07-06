@@ -1,15 +1,16 @@
 .header {
-  height: 18.6rem;
-  width: 100vw;
+  height: 26.83vh;
+  max-width: 100vw;
   border-radius: 0 0 8px 8px;
   background: linear-gradient(#4B29D4 0%, #2C9BD9 100%);
+  position: relative;
 }
 
 .greeting {
-  font-size: 3rem;
+  font-size: 4.32vh;
   text-align: center;
   position: absolute;
-  top: 2rem;
+  top: 10.7536710344%;
   left: 0;
   right: 0;
   font-weight: 600;
@@ -20,11 +21,11 @@
   display: flex;
   list-style: none;
   justify-content: space-around;
-  width: 28rem;
-  font-size: 3rem;
+  width: 40.4vh;
+  font-size: 4.32vh;
   font-weight: 600;
   left: 50%;
-  margin: 8.2rem -14rem 6.2rem -14rem;
+  margin: 12.26vh -20.2vh 6.2rem -20.2vh;
   position: absolute;
   cursor: pointer;
 }
@@ -41,8 +42,8 @@
 
 .active::after {
   content: '';
-  width: 9.5rem;
-  height: 0.3rem;
+  width: 100%;
+  height: 0.432vh;
   background: #fff;
   position: absolute;
   left: 0;

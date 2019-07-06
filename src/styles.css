@@ -24,12 +24,12 @@ app-todo {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: calc(47.5rem - 8.4rem);
+  min-height: 56vh;
 }
 
 app-home {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: calc(47.5rem - 8.4rem);
+  min-height: 56vh;
 }

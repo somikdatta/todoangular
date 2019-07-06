@@ -4,14 +4,14 @@
 
 .quotebox__quote {
   display: block;
-  font-size: 1.7rem;
+  font-size: 2.45vh;
   font-weight: 500;
   text-align: center;
 }
 
 .quotebox__author {
   display: block;
-  font-size: 1.5rem;
+  font-size: 2.16vh;
   font-weight: 500;
   text-align: right;
 }
@@ -27,13 +27,13 @@
 
 .time {
   color: #6999B5;
-  font-size: 4rem;
+  font-size: 5.77vh;
   font-weight: 500;
 }
 
 .day {
   color: #728C9B;
-  font-size: 2.1rem;
+  font-size: 3vh;
   font-weight: 500;
 }
 
@@ -50,17 +50,17 @@
 }
 
 .temparature {
-  position: absolute;
-  top: 5%;
-  font-size: 4.6rem;
-  line-height: 5.6rem;
+
+  font-size: 6.63vh;
+  line-height: 8.08vh;
+  height: inherit;
 }
 
 .degree {
-  font-size: 3.4rem;
-  position: absolute;
-  top: 6%;
-  right: 7%;
+  font-size: 4.9vh;
+  height: 8.08vh;
+  height: inherit;
+
 }
 
 .iconTempWrap {
@@ -68,13 +68,13 @@
 }
 
 .summary {
-  font-size: 2rem;
+  font-size: 2.88vh;
   text-align: right;
   color: #6999B5;
 }
 
 .icon {
-  width: 6.4rem;
+  width: 9.23vh;
 }
 
 .weather,
@@ -85,10 +85,10 @@
 .notweather {
   width: 100%;
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.88vh;
   border: 1px solid #dc3545;
   border-radius: 8px;
-  padding: 5px;
+  padding: 0.72vh;
   background: #ff98a3;
   color: #bc0719;
 }
@@ -100,7 +100,7 @@
 
 .timezone {
   color: #6999B5;
-  font-size: 2.4rem;
+  font-size: 3.46vh;
   flex: 1;
   text-align: left;
   text-indent: 15%;
