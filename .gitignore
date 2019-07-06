@@ -35,6 +35,7 @@ speed-measure-plugin.json
 .idea
 **/node_modules/*
 **/.firebaserc
+firebase.json
 
 ### Firebase Patch ###
 .runtimeconfig.json
