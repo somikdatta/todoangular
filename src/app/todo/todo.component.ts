@@ -11,12 +11,12 @@ import { trigger, transition, style, animate } from '@angular/animations';
   animations: [
     trigger('fade', [
       transition(":enter", [
-        style({ opacity: 0, transform: 'translateX(-3rem)' }),
+        style({ opacity: 0, transform: 'translateY(-3rem)' }),
         animate(200, style({ opacity: 1, transform: 'translateX(0)' }))
       ]),
       transition(":leave", [
-        style({ opacity: 1, transform: 'translateX(0)' }),
-        animate(200, style({ opacity: 0, transform: 'translateX(2rem)' }))
+        style({ opacity: 1, transform: 'translateY(0)' }),
+        animate(200, style({ opacity: 0, transform: 'translateY(3rem)' }))
       ])
     ]),
     trigger('pop', [
@@ -62,8 +62,8 @@ export class TodoComponent implements OnInit {
   cancelEdit(todo: TodoItem): void {
     this.controller.cancelEdit(todo);
   }
-  toggleCompleteItem(todo: TodoItem): void {
-    this.controller.toggleCompleteItem(todo);
+  toggleCompleteItem(todo: TodoItem, e: any): void {
+    this.controller.toggleCompleteItem(todo, e);
   }
   removeCompleted(): void {
     this.controller.removeCompleted();

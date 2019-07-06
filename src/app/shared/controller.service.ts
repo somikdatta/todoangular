@@ -11,8 +11,8 @@ import { TodoItem } from '../shared/model';
   providedIn: 'root'
 })
 export class ControllerService {
-  quoteAPIURL = 'http://quotes.rest/qod.json';
-  weatherAPIURL = 'http://corsproxysomik.herokuapp.com/https://api.darksky.net/forecast/44d5f2c1fe93d1fe500407f32b6fe528/';
+  quoteAPIURL = 'https://quotes.rest/qod.json';
+  weatherAPIURL = 'https://corsproxysomik.herokuapp.com/https://api.darksky.net/forecast/44d5f2c1fe93d1fe500407f32b6fe528/';
   locationAPIURL = 'https://nominatim.openstreetmap.org/reverse?format=jsonv2&';
   todos: TodoItem[];
   todoTitle: string;
@@ -97,8 +97,9 @@ export class ControllerService {
     todo.title = this.beforeEditCache;
     todo.editing = false;
   }
-  toggleCompleteItem(todo: TodoItem): void {
+  toggleCompleteItem(todo: TodoItem, e: any): void {
     todo.completed = !todo.completed;
+    e.currentTarget.blur();
     this.todosUpdated();
   }
   atLeastOneCompleted(): boolean {
@@ -110,7 +111,7 @@ export class ControllerService {
   }
   filterTodos(): TodoItem[] {
     if (this.filter === 'all') {
-      return this.todos;
+      return this.sortTodo(this.todos);
     }
     else if (this.filter === 'active') {
       return this.todos.filter(todo => !todo.completed);
@@ -119,6 +120,9 @@ export class ControllerService {
       return this.todos.filter(todo => todo.completed);
     }
     return this.todos;
+  }
+  sortTodo(todo: TodoItem[]): TodoItem[] {
+    return todo.sort(function (a: any, b: any) { return a.completed - b.completed });
   }
   todosUpdated(): void {
     localStorage.setItem('todos', JSON.stringify(this.todos));

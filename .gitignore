@@ -31,6 +31,15 @@ speed-measure-plugin.json
 !.vscode/extensions.json
 .history/*
 
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
+
+### Firebase Patch ###
+.runtimeconfig.json
+.firebase/
+
 # misc
 /.sass-cache
 /connect.lock

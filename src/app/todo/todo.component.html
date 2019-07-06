@@ -21,8 +21,7 @@
         </button>
     </div>
     <div *ngIf='controller.isEmpty' class="emptyMessage">Lookin' Empty!</div>
-    <div class="todo_item" [ngClass]="{'complete':todo.completed}"
-        *ngFor="let todo of controller.filterTodos()?.reverse()" @fade>
+    <div class="todo_item" [ngClass]="{'complete':todo.completed}" *ngFor="let todo of controller.filterTodos()" @fade>
         <div *ngIf='!todo.editing' class="todo_item_label" (dblclick)='editTodo(todo)'>{{ todo.title }}</div>
 
         <input *ngIf='todo.editing' type="text" class="todo_item_edit" [(ngModel)]='todo.title'
@@ -58,7 +57,7 @@
                     </g>
                 </svg>
             </button>
-            <button class="todo_item_done" (click)='toggleCompleteItem(todo)'>
+            <button class="todo_item_done" (click)='toggleCompleteItem(todo,$event)'>
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                     y="0px" viewBox="0 0 22 22" style="enable-background:new 0 0 22 22;" xml:space="preserve">
                     <g>
