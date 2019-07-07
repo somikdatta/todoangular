@@ -24,12 +24,21 @@ app-todo {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 56vh;
+  min-height: 56.6vh;
 }
 
 app-home {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 56vh;
+  min-height: 56.6vh;
+}
+
+@media only screen and (max-width: 428px) {
+
+  app-todo,
+  app-home {
+    min-height: inherit;
+  }
+
 }
