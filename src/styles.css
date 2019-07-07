@@ -19,8 +19,17 @@ body {
 }
 
 body {
+  @supports (-webkit-appearance:none) {
+    .os-android & {
+      min-height: calc(100vh - 56px);
+    }
+  }
+}
+
+body {
   height: 100rem;
 }
+
 
 app-todo {
   display: flex;

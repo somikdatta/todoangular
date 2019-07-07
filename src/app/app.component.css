@@ -22,16 +22,28 @@
   font-size: 1.73rem;
 }
 
-@media only screen and (max-width: 428px) {
+
+
+@media only screen and (max-width: 495px) {
   .content {
-    padding: 20px 20px;
-    margin: -7.2rem auto 5.05rem auto;
+    min-height: 67.5rem;
+    margin: -8.2rem auto 4.5rem auto;
+  }
+}
+
+@media only screen and (max-width: 458px) {
+  .content {
+    min-height: 68rem;
+    margin: -7.2rem auto 4rem auto;
   }
 
 }
 
-@media only screen and (max-width: 495px) {
+@media only screen and (max-width: 428px) {
   .content {
-    margin: -8.2rem auto 5.05rem auto;
+    min-height: 67rem;
+    padding: 20px 20px;
+    margin: -7.2rem auto 1.7rem auto;
   }
+
 }
