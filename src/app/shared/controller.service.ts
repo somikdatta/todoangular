@@ -32,7 +32,7 @@ export class ControllerService {
     this.todoId = this.todos.length > 0 ? (this.todos[(this.todos.length) - 1].id) + 1 : 1;
   }
   getUserName(): String {
-    return localStorage.getItem('name') ? localStorage.getItem('name') : 'User';
+    return localStorage.getItem('name') ? localStorage.getItem('name') : '[Enter Name]';
   }
 
   updateName(event: any) {

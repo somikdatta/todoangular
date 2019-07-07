@@ -1,45 +1,45 @@
 input.todo_input {
-  height: 6.06vh;
+  height: 6.06rem;
   width: 100%;
-  border-radius: 2.88vh 7.21vh 7.21vh 2.88vh;
-  border: 0.4329vh solid #3771D7;
-  box-shadow: 0 0 1.44vh 0 rgba(170, 168, 168, 0.2);
+  border-radius: 2.88rem 7.21rem 7.21rem 2.88rem;
+  border: 0.4329rem solid #3771D7;
+  box-shadow: 0 0 1.44rem 0 rgba(170, 168, 168, 0.2);
   outline: none;
-  text-indent: 2.88vh;
+  text-indent: 2.88rem;
   font-family: Montserrat, sans-serif;
   font-weight: 500;
-  font-size: 2.30vh;
-  line-height: 2.88vh;
-  padding-right: 6.06vh;
+  font-size: 2.30rem;
+  line-height: 2.88rem;
+  padding-right: 6.06rem;
   color: #728C9B;
 }
 
 input.todo_input::placeholder {
-  text-indent: 2.88vh;
+  text-indent: 2.88rem;
   font-family: Montserrat, sans-serif;
   font-weight: 500;
-  font-size: 2.30vh;
-  line-height: 2.88vh;
+  font-size: 2.30rem;
+  line-height: 2.88rem;
   color: #728C9B;
 }
 
 input.todo_input::-moz-placeholder {
-  text-indent: 2.88vh;
+  text-indent: 2.88rem;
   font-family: Montserrat,
     sans-serif;
   font-weight: 500;
-  font-size: 2.30vh;
-  line-height: 5.33vh;
+  font-size: 2.30rem;
+  line-height: 5.33rem;
   color: #728C9B;
 }
 
 input.todo_input::-webkit-input-placeholder {
-  text-indent: 2.88vh;
+  text-indent: 2.88rem;
   font-family: Montserrat,
     sans-serif;
   font-weight: 500;
-  font-size: 2.30vh;
-  line-height: 2.88vh;
+  font-size: 2.30rem;
+  line-height: 2.88rem;
   color: #728C9B;
 }
 
@@ -47,9 +47,9 @@ input.todo_input::-webkit-input-placeholder {
   position: absolute;
   top: 0;
   right: 0;
-  height: 6.06vh;
-  width: 6.06vh;
-  border-radius: 3.03vh;
+  height: 6.06rem;
+  width: 6.06rem;
+  border-radius: 3.03rem;
   box-shadow: none;
   border: none;
   background: #3771D7;
@@ -59,8 +59,8 @@ input.todo_input::-webkit-input-placeholder {
 
 
 .addBtn>svg {
-  width: 2.30vh;
-  height: 2.30vh;
+  width: 2.30rem;
+  height: 2.30rem;
 }
 
 
@@ -75,24 +75,24 @@ input.todo_input::-webkit-input-placeholder {
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 500;
-  font-size: 2.30vh;
-  line-height: 2.88vh;
+  font-size: 2.30rem;
+  line-height: 2.88rem;
   color: #c0cecb;
 }
 
 .todo_item {
   width: 100%;
-  margin-top: 2.88vh;
-  min-height: 6.06vh;
-  box-shadow: 0 0 2.88vh 0 rgba(170, 168, 168, 0.2);
-  border-radius: 1.15vh;
-  padding: 0 12.26vh 0 2.88vh;
+  margin-top: 2.88rem;
+  min-height: 6.06rem;
+  box-shadow: 0 0 2.88rem 0 rgba(170, 168, 168, 0.2);
+  border-radius: 1.15rem;
+  padding: 0 12.26rem 0 2.88rem;
   position: relative;
 }
 
 .todo_buttons {
   position: absolute;
-  right: 2.16vh;
+  right: 2.16rem;
   top: 0;
   margin: auto 0;
 }
@@ -100,9 +100,9 @@ input.todo_input::-webkit-input-placeholder {
 .todo_item_label {
   color: #728C9B;
   font-weight: 500;
-  font-size: 2.45vh;
+  font-size: 2.45rem;
   height: 100%;
-  line-height: 6.06vh;
+  line-height: 6.06rem;
   max-width: 100%;
   box-align: center;
   cursor: pointer;
@@ -115,9 +115,9 @@ input.todo_input::-webkit-input-placeholder {
 .todo_item_edit {
   color: #728C9B;
   font-weight: 500;
-  font-size: 2.45vh;
-  height: 6.06vh;
-  height: 6.06vh;
+  font-size: 2.45rem;
+  height: 6.06rem;
+  height: 6.06rem;
   max-width: 100%;
   border: none;
   outline: none;
@@ -125,8 +125,8 @@ input.todo_input::-webkit-input-placeholder {
 
 .todo_item_done,
 .todo_item_remove {
-  width: 4.43vh;
-  height: 6.06vh;
+  width: 4.43rem;
+  height: 6.06rem;
   background: none;
   border: none;
   outline: none;
@@ -136,24 +136,24 @@ input.todo_input::-webkit-input-placeholder {
 
 .todo_item_done>svg,
 .todo_item_remove>svg {
-  width: 3.17vh;
-  height: 3.17vh;
+  width: 3.17rem;
+  height: 3.17rem;
   cursor: pointer;
 }
 
 .todo_item_done>svg {
-  border-radius: 3.03vh;
-  border: 0.28vh solid #3771D7;
+  border-radius: 3.03rem;
+  border: 0.28rem solid #3771D7;
   transition: 0.2s border ease;
 }
 
 .todo_item_done::before {
   content: '';
-  height: 3.17vh;
-  width: 0.144vh;
+  height: 3.17rem;
+  width: 0.144rem;
   background: #c0cecb;
   position: absolute;
-  right: 4.473vh;
+  right: 4.473rem;
 }
 
 .todo_item_remove {
@@ -173,7 +173,7 @@ input.todo_input::-webkit-input-placeholder {
 
 .todo_item_done>svg:hover {
   fill: #fff;
-  border: 0.288vh solid #3771D7;
+  border: 0.288rem solid #3771D7;
   transition: 0.2s all ease;
   background-color: #3771D7;
 }
@@ -202,10 +202,10 @@ input.todo_input::-webkit-input-placeholder {
 
 .left_extra_container {
   width: 60%;
-  height: 6.06vh;
+  height: 6.06rem;
   display: flex;
-  box-shadow: 0 0 1.44vh 0 rgba(170, 168, 168, 0.2);
-  border-radius: 1.15vh;
+  box-shadow: 0 0 1.44rem 0 rgba(170, 168, 168, 0.2);
+  border-radius: 1.15rem;
 }
 
 .left_extra_container button {
@@ -222,15 +222,15 @@ input.todo_input::-webkit-input-placeholder {
 }
 
 .left_extra_container button:nth-of-type(2) {
-  border-left: 0.144vh solid rgba(170, 168, 168, 0.2);
-  border-right: 0.144vh solid rgba(170, 168, 168, 0.2);
+  border-left: 0.144rem solid rgba(170, 168, 168, 0.2);
+  border-right: 0.144rem solid rgba(170, 168, 168, 0.2);
 }
 
 .right_extra_container {
   width: 35%;
-  height: 6.06vh;
-  box-shadow: 0 0 1.44vh 0 rgba(170, 168, 168, 0.2);
-  border-radius: 1.15vh;
+  height: 6.06rem;
+  box-shadow: 0 0 1.44rem 0 rgba(170, 168, 168, 0.2);
+  border-radius: 1.15rem;
   text-align: center;
 }
 
@@ -253,5 +253,5 @@ input.todo_input::-webkit-input-placeholder {
 }
 
 button {
-  font-size: 2.02vh;
+  font-size: 2.02rem;
 }
