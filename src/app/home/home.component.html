@@ -2,9 +2,8 @@
     <span *ngIf="weatherReportReady" class="iconTempSummaryWrap">
         <div class="iconTempWrap">
             <img class='icon' src="../../assets/icons/{{weatherIcon}}" alt="{{weatherIcon}}">
-            <span class="temparature__box"><span class="temparature">{{temperature}}</span><span
-                    class="degree">°C</span>
-            </span>
+            <span class="temparature">{{temperature}}</span>
+            <span class="degree">°C</span>
         </div>
         <span class="summary">{{summary}}</span>
     </span>

@@ -21,7 +21,7 @@ body {
 body {
   @supports (-webkit-appearance:none) {
     .os-android & {
-      min-height: calc(100vh - 56px);
+      min-height: calc(100rem - 56px);
     }
   }
 }

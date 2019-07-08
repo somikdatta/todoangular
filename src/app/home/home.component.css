@@ -52,19 +52,20 @@
 .temparature {
 
   font-size: 6.63rem;
-  line-height: 8.08rem;
+  line-height: 9.2rem;
   height: inherit;
+  color: #67889B;
 }
 
 .degree {
   font-size: 4.9rem;
-  height: 8.08rem;
-  height: inherit;
-
+  line-height: 8rem;
+  color: #67889B;
 }
 
 .iconTempWrap {
   position: relative;
+  display: flex;
 }
 
 .summary {
@@ -96,6 +97,7 @@
 .iconTempSummaryWrap {
   flex-direction: column;
   flex: 1;
+  margin-right: 4rem;
 }
 
 .timezone {
@@ -103,7 +105,6 @@
   font-size: 3.46rem;
   flex: 1;
   text-align: left;
-  text-indent: 15%;
   line-height: 100%;
   position: relative;
 }
