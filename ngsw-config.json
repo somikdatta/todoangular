@@ -37,7 +37,7 @@
     },
     {
       "name": "Weather API",
-      "urls": ["https://corsproxysomik.herokuapp.com/**"],
+      "urls": ["https://corsproxysomik.herokuapp.com/*"],
       "cacheConfig": {
         "strategy": "performance",
         "maxAge": "30m",
@@ -46,7 +46,7 @@
     },
     {
       "name": "Reverse Geolocation API",
-      "urls": ["https://nominatim.openstreetmap.org/**"],
+      "urls": ["https://nominatim.openstreetmap.org/*"],
       "cacheConfig": {
         "strategy": "performance",
         "maxAge": "3m",
