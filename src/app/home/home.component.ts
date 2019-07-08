@@ -53,15 +53,15 @@ export class HomeComponent implements OnInit {
                   this.temperature = this.weatherReport.currently.temperature,
                   this.temperature = Math.floor((this.temperature - 32) / 1.8),
                   this.summary = this.weatherReport.currently.summary,
-                  this.weatherIcon = `${this.weatherReport.currently.icon}.png`,
-                  this.weatherReportReady = true;
+                  this.weatherIcon = `${this.weatherReport.currently.icon}.png`
               },
               err => console.log(err)
             );
           this.service.getLocation(this.latitude, this.longitude).subscribe(
             address => {
               this.address = address,
-                this.timezone = this.address.address.city
+                this.timezone = this.address.address.city,
+                this.weatherReportReady = true;
             },
             err => console.log(err)
           );
@@ -89,6 +89,12 @@ export class HomeComponent implements OnInit {
     setInterval(() => {
       this.timeNow();
     }, 60000);
+  }
+
+  loadSpinner(): boolean {
+    if (this.locationAvailability && !this.weatherReportReady)
+      return true;
+    return false;
   }
 
 }

@@ -8,6 +8,8 @@ import { HeaderComponent } from './header/header.component';
 
 import { RoutingModule } from './routing/routing.module';
 import { ControllerService } from './shared/controller.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { ControllerService } from './shared/controller.service';
     BrowserModule,
     RoutingModule,
     HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [ControllerService],
   bootstrap: [AppComponent]
