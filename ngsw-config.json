@@ -37,7 +37,7 @@
     },
     {
       "name": "Weather API",
-      "urls": ["https://corsproxysomik.herokuapp.com/*"],
+      "urls": ["https://corsproxysomik.herokuapp.com/https://api.darksky.net/forecast/44d5f2c1fe93d1fe500407f32b6fe528/**"],
       "cacheConfig": {
         "strategy": "performance",
         "maxAge": "30m",
@@ -46,10 +46,10 @@
     },
     {
       "name": "Reverse Geolocation API",
-      "urls": ["https://nominatim.openstreetmap.org/*"],
+      "urls": ["https://nominatim.openstreetmap.org/**"],
       "cacheConfig": {
         "strategy": "performance",
-        "maxAge": "3m",
+        "maxAge": "30m",
         "maxSize": 20
       }
     }
