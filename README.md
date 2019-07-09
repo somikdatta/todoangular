@@ -10,7 +10,7 @@ _Name of "User" can be changed and is retained on page refresh._
 
 ![If Given, shows weather and location data](https://i.imgur.com/Z4bapdB.png)
 
-![The To-Do Section comes with filters](https://i.imgur.com/fD1G9ot.gifv)
+![The To-Do Section comes with filters](https://i.imgur.com/fD1G9ot.gif)
 
 
 ## Development server
