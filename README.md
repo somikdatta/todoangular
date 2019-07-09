@@ -2,13 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0.
 
-This project provides user a dyamic landing page (Home) tab and a TO DO list tab (under development)
+This project provides user a dyamic landing page (Home) tab and a TO DO list tab.
 
 _Name of "User" can be changed and is retained on page refresh._
 
-![Asks for Location Permission](https://i.imgur.com/SlIf73q.png?1)
+![Asks for Location Permission](https://i.imgur.com/dnLuJQL.png)
 
-![If Given, shows weather and location data](https://i.imgur.com/1iSPLEO.png?1)
+![If Given, shows weather and location data](https://i.imgur.com/Z4bapdB.png)
+
+![The To-Do Section comes with filters](https://i.imgur.com/fD1G9ot.gifv)
 
 
 ## Development server
