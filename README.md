@@ -2,13 +2,21 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0.
 
-This project provides user a dyamic landing page (Home) tab and a TO DO list tab.
+## This project provides user a dyamic landing page (Home) tab and a TO DO list tab.
 
-_Name of "User" can be changed and is retained on page refresh._
+All the data is stored in browser's localStorage for now. Firebase authentication and storage coming soon.
+
+### The app asks for location from the user to show their current location and weather details.
 
 ![Asks for Location Permission](https://i.imgur.com/dnLuJQL.png)
 
+### If location is supplied, the details are shown
+
 ![If Given, shows weather and location data](https://i.imgur.com/Z4bapdB.png)
+
+### The todo section comes with filter buttons
+
+This helps to sort todos based on copmpletion. Upon completion of at least one task the 'Clear Completed' button is displayed to remove all completed tasks.
 
 ![The To-Do Section comes with filters](https://i.imgur.com/fD1G9ot.gif)
 
