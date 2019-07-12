@@ -36,8 +36,19 @@ export class ControllerService {
   }
 
   updateName(event: any) {
-    localStorage.setItem('name', event.target.innerText);
-    event.target.blur();
+    if (!event.target.innerText) {
+      event.target.innerText = '[Enter Name]';
+      event.target.blur();
+    }
+    else {
+      localStorage.setItem('name', event.target.innerText);
+      event.target.blur();
+    }
+  }
+  refreshName(event: any) {
+    if (event.target.innerText === '[Enter Name]') {
+      event.target.innerHTML = '';
+    }
   }
 
   getGreeting(): String {

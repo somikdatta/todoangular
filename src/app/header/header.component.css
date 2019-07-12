@@ -17,6 +17,10 @@
   color: #fff;
 }
 
+.greeting__name {
+  min-width: 2px;
+}
+
 .navbar {
   display: flex;
   list-style: none;

@@ -18,5 +18,8 @@ export class HeaderComponent implements OnInit {
     this.service.updateName(event);
 
   }
+  refreshName(event: any) {
+    this.service.refreshName(event);
+  }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ControllerService } from '../shared/controller.service';
 
 import { Qod } from '../shared/model';
@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
   weatherIcon: string;
   locationAvailability: boolean;
 
-  constructor(private service: ControllerService, private ngZone: NgZone) { }
+  constructor(private service: ControllerService) { }
 
   ngOnInit() {
 
