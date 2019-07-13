@@ -1,9 +1,10 @@
 <div class="header" id="renderer">
-    <div class="greeting">
+    <span class="greeting">
         <span class="greeting__time">{{greeting}}</span>
-        <span (blur)='updateName($event)' (keydown.enter)='updateName($event)' (click)='refreshName($event)'
-            class="greeting__name" contenteditable="true">{{name}}</span>
-    </div>
+        <span id="hide"></span>
+        <input #inputText class="greeting__name" type="text" [(ngModel)]="name" (blur)='updateName($event)'
+            (keydown.enter)='updateName($event)' (click)='refreshName($event)' id="show" (input)="resize()">
+    </span>
     <ul class="navbar">
         <li id='homeBtn'><a routerLink='/home' routerLinkActive="active">Home</a></li>
         <li id='todoBtn'><a routerLink='/todo' routerLinkActive="active">To Do</a></li>

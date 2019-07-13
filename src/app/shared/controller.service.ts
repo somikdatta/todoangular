@@ -32,22 +32,23 @@ export class ControllerService {
     this.todoId = this.todos.length > 0 ? (this.todos[(this.todos.length) - 1].id) + 1 : 1;
   }
   getUserName(): String {
-    return localStorage.getItem('name') ? localStorage.getItem('name') : '[Enter Name]';
+    return localStorage.getItem('name') ? localStorage.getItem('name') : '[Name]';
   }
 
   updateName(event: any) {
-    if (!event.target.innerText) {
-      event.target.innerText = '[Enter Name]';
+    if (!event.target.value) {
+      event.target.value = '[Name]';
+      document.getElementById('hide').innerText = '[Name]';
       event.target.blur();
     }
     else {
-      localStorage.setItem('name', event.target.innerText);
+      localStorage.setItem('name', event.target.value);
       event.target.blur();
     }
   }
   refreshName(event: any) {
-    if (event.target.innerText === '[Enter Name]') {
-      event.target.innerHTML = '';
+    if (event.target.value === '[Name]') {
+      event.target.value = '';
     }
   }
 
