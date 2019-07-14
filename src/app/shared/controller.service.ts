@@ -20,6 +20,8 @@ export class ControllerService {
   beforeEditCache: string;
   filter: string;
   public isEmpty: boolean;
+  hide: any;
+  txt: any;
 
   constructor(private http: HttpClient) {
     this.filter = 'all';
@@ -50,6 +52,13 @@ export class ControllerService {
     if (event.target.value === '[Name]') {
       event.target.value = '';
     }
+  }
+  resize() {
+
+    this.hide = document.getElementById('hide');
+    this.txt = document.getElementById('show');
+    this.hide.textContent = this.txt.value;
+    this.txt.style.width = this.hide.offsetWidth + "px";
   }
 
   getGreeting(): String {

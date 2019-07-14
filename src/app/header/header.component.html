@@ -3,7 +3,8 @@
         <span class="greeting__time">{{greeting}}</span>
         <span id="hide"></span>
         <input #inputText class="greeting__name" type="text" [(ngModel)]="name" (blur)='updateName($event)'
-            (keydown.enter)='updateName($event)' (click)='refreshName($event)' id="show" (input)="resize()">
+            (keydown.enter)='updateName($event)' (click)='refreshName($event)' id="show"
+            (input)="this.service.resize()">
     </span>
     <ul class="navbar">
         <li id='homeBtn'><a routerLink='/home' routerLinkActive="active">Home</a></li>

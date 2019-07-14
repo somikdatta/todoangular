@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ControllerService } from '../shared/controller.service';
 
 @Component({
@@ -8,30 +8,23 @@ import { ControllerService } from '../shared/controller.service';
 })
 
 export class HeaderComponent implements OnInit {
-  name: String = '[Enter Name]';
+  name: String = '[Name]';
   greeting: String;
-  hide: any;
-  txt: any;
+
   constructor(private service: ControllerService) { }
   ngOnInit() {
     this.name = this.service.getUserName();
     this.greeting = this.service.getGreeting();
-    this.hide = document.getElementById('hide');
-    this.txt = document.getElementById('show');
-    this.hide.innerText = this.txt.value;
-    this.txt.style.width = this.hide.offsetWidth + "px";
+    this.service.resize();
   }
   updateName(event: any) {
     this.service.updateName(event);
-    this.resize();
+    this.service.resize();
   }
   refreshName(event: any) {
     this.service.refreshName(event);
-    this.resize();
+    this.service.resize();
   }
-  resize() {
-    this.hide.textContent = this.txt.value;
-    this.txt.style.width = this.hide.offsetWidth + "px";
-  }
+
 
 }
