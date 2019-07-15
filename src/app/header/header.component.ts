@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
   name: String = '[Name]';
   greeting: String;
 
-  constructor(private service: ControllerService) { }
+  constructor(public service: ControllerService) { }
   ngOnInit() {
     this.name = this.service.getUserName();
     this.greeting = this.service.getGreeting();
