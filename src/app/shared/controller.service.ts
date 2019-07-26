@@ -13,7 +13,7 @@ import { TodoItem } from '../shared/model';
 export class ControllerService {
   quoteAPIURL = 'https://quotes.rest/qod.json';
   weatherAPIURL = 'https://corsproxysomik.herokuapp.com/https://api.darksky.net/forecast/44d5f2c1fe93d1fe500407f32b6fe528/';
-  locationAPIURL = 'https://nominatim.openstreetmap.org/reverse?format=jsonv2&';
+  locationAPIURL = 'https://nominatim.openstreetmap.org/reverse?format=geojson&';
   todos: TodoItem[];
   todoTitle: string;
   todoId: number;
