@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit {
           this.service.getLocation(this.latitude, this.longitude).subscribe(
             address => {
               this.address = address,
-                this.timezone = this.address.features[0].properties.address.town,
+                this.timezone = this.address.features[0].properties.address.state,
                 this.weatherReportReady = true;
             },
             err => console.log(err)
